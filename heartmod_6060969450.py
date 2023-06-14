@@ -6,27 +6,27 @@ from .. import loader, utils
 
 @loader.owner
 def register(cb):
-    cb(heartmod())
+    cb(badboymod())
 
 
-class heartmod(loader.Module):
-    strings = {"name": "ⲏⲉⲁʀⲧⲘⲟⲇ⛧"} # name loader ()
+class badboymod(loader.Module):
+    strings = {"name": "badboymod⛧"} # name loader ()
 
     async def client_ready(self, client, db) -> None:
         self.db = db
         self.client = client
 
-    async def heartcmd(self, message):
-        '''Интервал в секундах + Отметка \n [ Dev by - @kwozu_bloodmachine ]''' 
+    async def badboycmd(self, message):
+        '''Интервал в секундах + Отметка \n [ Dev by - @m1scam ]''' 
         args = utils.get_args_raw(message)
         if not args:
             self.db.set(self.strings["name"], "state", False)
-            await utils.answer(message, "Ⲙⲟⲇⲩⲗь #heart ⳝыⲗ ⲟⲧⲕⲗюⳡⲉⲏ!")
+            await utils.answer(message, "Ⲙⲟⲇⲩⲗь #badboy ⳝыⲗ ⲟⲧⲕⲗюⳡⲉⲏ!")
             return
         await utils.answer(
             message,
-            "<b>Ⲙⲟⲇⲩⲗь #heart ⳝыⲗ ⳅⲁⲡⲩⳃⲉⲏ!\n\n"
-            "Ⳡⲧⲟⳝы ⲉⲅⲟ ⲟⲥⲧⲁⲏⲟⲃυⲧь, υⲥⲡⲟⲗьⳅⲩύ <code>.heart</code></b>"
+            "<b>Ⲙⲟⲇⲩⲗь #badboy ⳝыⲗ ⳅⲁⲡⲩⳃⲉⲏ!\n\n"
+            "Ⳡⲧⲟⳝы ⲉⲅⲟ ⲟⲥⲧⲁⲏⲟⲃυⲧь, υⲥⲡⲟⲗьⳅⲩύ <code>.badboy</code></b>"
         )
         text = args.split(' ')
         time = int(text[0])
